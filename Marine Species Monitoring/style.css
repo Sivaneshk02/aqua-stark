@@ -1,0 +1,559 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007aa2;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar ul li {
+    margin-left: 1.5rem;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    background-color: #043f5d;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #333;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn {
+    background-color:#007aa2;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn:hover {
+    background-color: #007aa2;
+    transform: scale(1.05);
+}
+  
+video {
+    min-width: 100%;
+    min-height: 80%;
+    width: auto;
+    height: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+/* Sections */
+.section {
+    padding: 3rem;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: 5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Stack the navigation links vertically on smaller screens */
+    .navbar ul {
+        flex-direction: column;
+        display: none; /* Initially hidden */
+        width: 100%;
+        background-color:#007aa2; /* Ensure it matches the navbar color */
+        position: absolute;
+        top: 60px; /* Just below the navbar */
+        left: 0;
+    }
+
+    /* Show the menu toggle button for mobile */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Each bar of the hamburger icon */
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+    }
+
+    /* Display the mobile menu when "showing" class is added */
+    .navbar ul.showing {
+        display: flex;
+    }
+
+    /* Make sure the hero section font sizes adjust on smaller screens */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    /* Sections */
+    .section {
+        padding: 1.5rem;
+        margin-top: 6rem; /* Adjust margin for fixed navbar */
+    }
+
+    /* Ensure images or large content fits within the screen on smaller devices */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjust the font sizes and padding for very small screens */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Make sure the navigation links take up full width */
+    .navbar ul li {
+        margin: 0.5rem 0;
+    }
+
+    /* Sections */
+    .section {
+        padding: 1rem;
+        margin-top: 7rem; /* Extra space for the navbar */
+    }
+}
+/* Contact Section */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+}
+
+.contact button {
+    padding: 0.8rem;
+    background-color: #007aa2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Section-specific background images */
+#about {
+    background: url('img/about_img.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 2rem;
+    margin-bottom: 10px;
+}
+
+#goals {
+    background: url('img/ourgoals.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 2rem;
+    margin-top: 16px;
+    padding-top: 15px;
+}
+
+#research  {
+    background: url('img/research_img.jpg') no-repeat center center/cover;
+    color: white;
+    margin-top: 5px;
+    padding: 5rem 2rem;
+}
+
+#process {
+    background: url('img/process_img.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 2rem;
+}
+
+#technology {
+    background: url('img/tech_img.jpeg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 2rem;
+
+    
+}
+#contact {
+    background: url('img/contact_img.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 2rem;
+    padding-top: 5rem;
+}
+
+/* Ensure each section text is readable over background */
+.section h2 {
+    font-size: 150px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: .7963;
+    font-family: var(--secondary-font);
+    margin-right: 20cm;
+}
+.section h2:hover{
+    color: #10777a;
+    cursor: pointer;
+}
+
+#about.section p {
+    font-size: 1.4rem;
+    max-width: 1000px;
+    margin-right:5.7cm;
+    text-align:left;
+    font-style: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(225, 242, 255);
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.075;
+    font-family: var(--secondary-font);
+
+}
+#goals.section p {
+    font-size: 1.3rem;
+    max-width: 10000px;
+    margin-right:5.7cm;
+    text-align:left;
+    font-style: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(225, 242, 255);
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 2px;
+    font-family: var(--secondary-font);
+}
+
+#goals.section h2 {
+    font-size: 200px;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: .7963;
+    font-family: var(--secondary-font);
+    margin-right: 15cm;
+}
+
+
+.section ul li{
+    font-size: 1.4rem;
+    max-width: 1000px;
+    margin-right:5.7cm;
+    text-align:left;
+    font-style: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(225, 242, 255);
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.075;
+    font-family: var(--secondary-font);
+}
+.section ol li{
+    font-size: 25px;
+    text-align: left;
+    line-height: 1.8;
+    margin-left: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    letter-spacing: .5px;
+    color: #d2feff;
+    font-style: oblique;
+}
+/* Additional styles for responsiveness */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Adjust background and text for smaller screens */
+    #about, #goals, #research, #process, #technology {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.6rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
+}
+/* Grid Layout for Species Cards */
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Species Card */
+.species-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.species-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.species-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.species-card .card-content {
+    padding: 1.5rem;
+}
+
+.species-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.species-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .research-section h2 {
+        font-size: 2rem;
+    }
+    .species-card h3 {
+        font-size: 1.3rem;
+    }
+    .species-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer Section Styles */
+footer {
+    background-color: #007aa2;
+    padding: 2rem 0;
+    text-align: center;
+    color: white;
+}
+
+.footer-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Social Icons Styling */
+.socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Hover effect for icons */
+.socials li a:hover {
+    color: #ff47af;
+    transform: scale(1.2);
+}
+
+/* Responsive Footer Styling */
+@media (max-width: 768px) {
+    .footer-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .footer-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .socials li a {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+
+    .socials li a {
+        font-size: 1.1rem;
+    }
+}
+
